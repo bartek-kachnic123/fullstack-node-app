@@ -3,6 +3,13 @@ nav .brand-logo {
     color: #000000DE;
 }
 
+nav ul a {
+    font-size: 1.5rem;
+}
+#nav-mobile ul a {
+    font-size: 1.5rem;
+}
+
 .sidenav-trigger {
     color: #26a69a;
 }
