@@ -1,0 +1,13 @@
+nav ul a,
+nav .brand-logo {
+    color: #000000DE;
+}
+
+.sidenav-trigger {
+    color: #26a69a;
+}
+
+#logo-container {
+    letter-spacing: 2px;
+    font-weight: bold;
+}

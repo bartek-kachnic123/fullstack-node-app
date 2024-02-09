@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*body {*/
+/*  padding: 50px;*/
+/*  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+/*}*/
+
+
+
+p {
+  line-height: 2rem;
 }
 
-a {
-  color: #00B7FF;
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.btn-close {
+  display: inline-block;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  color: black;
+  background-color: #26a69a;
+  cursor: pointer;
 }
