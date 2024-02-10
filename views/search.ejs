@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('./components/head.ejs') %>
+</head>
+<body>
+<%- include('./components/nav.ejs') %>
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <form class="col s12" method="get">
+                <div class="row">
+                    <div class="input-field col s12 center-on-small-only">
+                        <i class="material-icons prefix">search</i>
+                        <input id="search-input" type="text" class="validate">
+                        <label for="search-input">Wyszukiwanie</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div id="search-listing" class="center"></div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('./components/footer.ejs') %>
+<%- include('./components/scripts.ejs') %>
+<script src="/javascripts/search.js"></script>
+</body>
+</html>
