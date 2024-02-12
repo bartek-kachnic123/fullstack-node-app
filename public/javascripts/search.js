@@ -1,14 +1,7 @@
 var timeoutSearchId = null;
-const circular =  `<div class="preloader-wrapper big active">
-      <div class="spinner-layer spinner-green-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>`;
+const circular =  `<div class="spinner-border text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`;
 var isCircle = false;
 $('#search-input').keyup(function() {
     let query = $(this).val();

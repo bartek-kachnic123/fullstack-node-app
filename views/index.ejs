@@ -7,107 +7,200 @@
   <body>
     <%- include('./components/nav.ejs') %>
 
-    <div id="index-banner" class="parallax-container">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <br><br>
-          <h1 class="header center teal-text text-lighten-2">iBiblio</h1>
-          <div class="row center">
-            <h5 class="header col s12 light">Twoja Biblioteka książek</h5>
+    <main>
+
+      <div id="myCarousel" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Example headline.</h1>
+                <p>Some representative placeholder content for the first slide of the carousel.</p>
+                <p><a class="btn-custom-green" href="#">Sign up today</a></p>
+              </div>
+            </div>
           </div>
-          <div class="row center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Zarejstruj się</a>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Some representative placeholder content for the second slide of the carousel.</p>
+                <p><a class="btn-custom-green" href="#">Learn more</a></p>
+              </div>
+            </div>
           </div>
-          <br><br>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>One more for good measure.</h1>
+                <p>Some representative placeholder content for the third slide of this carousel.</p>
+                <p><a class="btn-custom-green" href="#">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="parallax"><img src="/images/background1.jpg" alt="Unsplashed background img 1"></div>
-    </div>
 
-    <div class="container">
-      <h2 class="center blue-grey-text">Najchętniej czytane książki</h2>
-      <div class="carousel carousel-slider center" id="carousel-main">
-        <div class="carousel-fixed-item center">
-          <a class="btn waves-effect white grey-text darken-text-2" onclick="prevItem()">Przesuń w lewo</a>
-          <a class="btn waves-effect white grey-text darken-text-2" onclick="nextItem()">Przesuń w prawo</a>
-        </div>
-        <div class="carousel-item red white-text" href="#one!">
-          <h2>Book title</h2>
-          <p class="white-text">Short book description</p>
-          <img src="/images/background1.jpg" alt="xx">
-        </div>
-        <div class="carousel-item amber white-text" href="#two!">
-          <h2>Second Panel</h2>
-          <p class="white-text">This is your second panel</p>
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-          <h2>Third Panel</h2>
-          <p class="white-text">This is your third panel</p>
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <h2>Fourth Panel</h2>
-          <p class="white-text">This is your fourth panel</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="section">
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <!--   Icon Section   -->
+      <div class="container marketing">
+
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+            <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+          </div>
+          <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+          </div>
+          <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+
+        <!-- Three columns of text below the carousel -->
         <div class="row">
-          <div class="col s12 l4">
-            <div class="icon-block">
-              <h2 class="center blue-grey-text"><i class="material-icons">search</i></h2>
-              <h5 class="center">Wyszukiwanie</h5>
+          <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-              <p class="light">Sekcja "Wyszukiwanie książek" umożliwia szybkie i wygodne przeszukiwanie bogatego katalogu
-                bibliotecznego. Dzięki naszemu zaawansowanemu systemowi wyszukiwania, użytkownicy mogą łatwo znaleźć
-                interesujące ich tytuły, autorów czy kategorie książek, zapewniając szybki dostęp do potrzebnych zasobów.</p>
-            </div>
-          </div>
+            <h2>Heading</h2>
+            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-          <div class="col s12 l4">
-            <div class="icon-block">
-              <h2 class="center blue-grey-text"><i class="material-icons">groups</i></h2>
-              <h5 class="center">O Nas</h5>
+            <h2>Heading</h2>
+            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-              <p class="light">
-                Sekcja "O nas" przedstawia iBiblio jako innowacyjną platformę, której celem jest ułatwienie dostępu do
-                wiedzy poprzez nowoczesne rozwiązania technologiczne. Nasza aplikacja powstała z myślą o zapewnieniu
-                użytkownikom łatwego dostępu do bogatych zasobów bibliotecznych, zachęcając do czytania i poszerzania
-                horyzontów intelektualnych</p>
-            </div>
-          </div>
+            <h2>Heading</h2>
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
 
-          <div class="col s12 l4">
-            <div class="icon-block">
-              <h2 class="center blue-grey-text"><i class="material-icons">contact_support</i></h2>
-              <h5 class="center">Kontakt</h5>
+      </div><!-- /.container -->
 
-              <p class="light">Sekcja "Kontakt" umożliwia użytkownikom skontaktowanie
-                się z działem obsługi w razie pytań, sugestii lub problemów technicznych.
-                Poprzez prosty formularz kontaktowy, użytkownicy mogą łatwo przekazać swoje wiadomości, co
-                pozwala nam szybko i skutecznie odpowiadać na ich potrzeby oraz zapewniać wysoką jakość obsługi.</p>
-            </div>
-          </div>
-        </div>
+    </main>
 
-      </div>
-    </div>
+<!--    <div class="container">-->
+<!--      <div class="section">-->
+
+<!--        &lt;!&ndash;   Icon Section   &ndash;&gt;-->
+<!--        <div class="row">-->
+<!--          <div class="col s12 l4">-->
+<!--            <div class="icon-block">-->
+<!--              <h2 class="center blue-grey-text"><i class="material-icons">search</i></h2>-->
+<!--              <h5 class="center">Wyszukiwanie</h5>-->
+
+<!--              <p class="light">Sekcja "Wyszukiwanie książek" umożliwia szybkie i wygodne przeszukiwanie bogatego katalogu-->
+<!--                bibliotecznego. Dzięki naszemu zaawansowanemu systemowi wyszukiwania, użytkownicy mogą łatwo znaleźć-->
+<!--                interesujące ich tytuły, autorów czy kategorie książek, zapewniając szybki dostęp do potrzebnych zasobów.</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col s12 l4">-->
+<!--            <div class="icon-block">-->
+<!--              <h2 class="center blue-grey-text"><i class="material-icons">groups</i></h2>-->
+<!--              <h5 class="center">O Nas</h5>-->
+
+<!--              <p class="light">-->
+<!--                Sekcja "O nas" przedstawia iBiblio jako innowacyjną platformę, której celem jest ułatwienie dostępu do-->
+<!--                wiedzy poprzez nowoczesne rozwiązania technologiczne. Nasza aplikacja powstała z myślą o zapewnieniu-->
+<!--                użytkownikom łatwego dostępu do bogatych zasobów bibliotecznych, zachęcając do czytania i poszerzania-->
+<!--                horyzontów intelektualnych</p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col s12 l4">-->
+<!--            <div class="icon-block">-->
+<!--              <h2 class="center blue-grey-text"><i class="material-icons">contact_support</i></h2>-->
+<!--              <h5 class="center">Kontakt</h5>-->
+
+<!--              <p class="light">Sekcja "Kontakt" umożliwia użytkownikom skontaktowanie-->
+<!--                się z działem obsługi w razie pytań, sugestii lub problemów technicznych.-->
+<!--                Poprzez prosty formularz kontaktowy, użytkownicy mogą łatwo przekazać swoje wiadomości, co-->
+<!--                pozwala nam szybko i skutecznie odpowiadać na ich potrzeby oraz zapewniać wysoką jakość obsługi.</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
 
 
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-          </div>
-        </div>
-      </div>
-      <div class="parallax"><img src="/images/background2.jpg" alt="Unsplashed background img 2"></div>
-    </div>
+<!--    <div class="parallax-container valign-wrapper">-->
+<!--      <div class="section no-pad-bot">-->
+<!--        <div class="container">-->
+<!--          <div class="row center">-->
+<!--            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="parallax"><img src="/images/background2.jpg" alt="Unsplashed background img 2"></div>-->
+<!--    </div>-->
+
 
 
 

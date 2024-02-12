@@ -1,19 +1,42 @@
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="/" class="brand-logo">COMPANY</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="/search">Wyszukaj<i class="material-icons md-auto right">search</i></a></li>
-            <li><a href="/about">O nas <i class="material-icons md-auto right">groups</i></a></li>
-            <li><a href="/contact">Kontakt <i class="material-icons md-auto right">contact_support</i></a></li>
-        </ul>
-        <div id="nav-mobile" class="sidenav">
-            <button class="btn-close waves-effect waves-light right" onclick="closeSideNav()"><i class="material-icons md-36">close</i></button>
-        <ul>
-            <li><a href="/search">Wyszukaj<i class="material-icons md-auto">search</i></a></li>
-            <li><a href="/about">O nas<i class="material-icons md-auto">groups</i></a></li>
-            <li><a href="/contact">Kontakt <i class="material-icons md-auto">contact_support</i></a></li>
-        </ul>
+<!--<nav class="white" role="navigation">-->
+<!--    <div class="nav-wrapper container">-->
+<!--        <a id="logo-container" href="/" class="brand-logo">COMPANY</a>-->
+<!--        <ul class="right hide-on-med-and-down">-->
+<!--            <li><a href="/search" class="blue-grey-text darken-4">Wyszukaj<i class="material-icons md-auto right">search</i></a></li>-->
+<!--            <li><a href="/about" class="blue-grey-text darken-4">O nas <i class="material-icons md-auto right">groups</i></a></li>-->
+<!--            <li><a href="/contact" class="blue-grey-text darken-4">Kontakt <i class="material-icons md-auto right">contact_support</i></a></li>-->
+<!--        </ul>-->
+<!--        <div id="nav-mobile" class="sidenav">-->
+<!--            <button class="btn-close right hoverable" onclick="closeSideNav()"><i class="material-icons md-36">close</i></button>-->
+<!--        <ul>-->
+<!--            <li><a href="/search">Wyszukaj<i class="material-icons md-auto left">search</i></a></li>-->
+<!--            <li><a href="/about">O nas<i class="material-icons md-auto left">groups</i></a></li>-->
+<!--            <li><a href="/contact">Kontakt <i class="material-icons md-auto left">contact_support</i></a></li>-->
+<!--        </ul>-->
+<!--        </div>-->
+<!--        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-md navbar-bg-body">
+    <div class="container">
+        <a class="navbar-brand" id="brand-logo" href="/">iBiblio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end mr-2" id="navbarToggler1">
+            <ul class="navbar-nav mb-2 mb-lg-0 column-gap-2">
+                <li class="nav-item">
+                    <a href="/search" class="nav-link d-flex align-items-center gap-2"><i class="material-icons md-auto ">search</i>Wyszukaj</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link d-flex align-items-center gap-2"><i class="material-icons md-auto">groups</i>O nas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link d-flex align-items-center gap-2"><i class="material-icons md-auto">contact_support</i>Kontakt</a>
+                </li>
+
+            </ul>
         </div>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </nav>
