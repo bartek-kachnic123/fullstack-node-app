@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('./components/head.ejs') %>
+</head>
+<body>
+<%- include('./components/nav.ejs') %>
+<div class="container-sm  my-4">
+<form method="post" action="/books/add" class="row">
+    <div class="col col-lg-6">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="material-icons md-auto">title</i></span>
+            <input type="text" class="form-control" placeholder="Tytuł" aria-label="Title" aria-describedby="basic-addon1" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2"><i class="material-icons md-auto">person</i></span>
+            <input type="text" class="form-control" placeholder="Autor" aria-label="Author" aria-describedby="basic-addon2" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><i class="material-icons md-auto">category</i></span>
+            <input type="text" class="form-control" placeholder="Gatunek" aria-label="Genre" aria-describedby="basic-addon3" list="datalistOptions" required>
+            <datalist id="datalistOptions">
+                <option value="Historyczna">
+                <option value="Powieść literacka">
+                <option value="Fantastyka">
+                <option value="Kryminał/thriller">
+            </datalist>
+        </div>
+    </div>
+    <div class="col">
+        <button class="btn-custom-green" type="submit">Dodaj nową książkę</button>
+    </div>
+</form>
+</div>
+
+<%- include('./components/footer.ejs') %>
+<%- include('./components/scripts.ejs') %>
+<script src="/javascripts/search.js"></script>
+</body>
+</html>

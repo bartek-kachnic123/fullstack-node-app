@@ -16,4 +16,8 @@ router.get('/data/', function(req, res, next) {
     res.json({data: filtered_arr});
 });
 
+router.get('/add/', function(req, res) {
+    res.render('add-book', { title: 'Dodaj' });
+})
+
 module.exports = router;
