@@ -2,23 +2,29 @@
 <html lang="en">
 <head>
     <%- include('./components/head.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/add-book.css">
 </head>
 <body>
 <%- include('./components/nav.ejs') %>
-<div class="container-sm  my-4">
+<main>
+<div class="container-sm py-5">
 <form method="post" action="/books/add" class="row">
     <div class="col col-lg-6">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="material-icons md-auto">title</i></span>
-            <input type="text" class="form-control" placeholder="Tytuł" aria-label="Title" aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" placeholder="Tytuł" aria-label="Title" aria-describedby="basic-addon1" name="title" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2"><i class="material-icons md-auto">person</i></span>
-            <input type="text" class="form-control" placeholder="Autor" aria-label="Author" aria-describedby="basic-addon2" required>
+            <input type="text" class="form-control" placeholder="Autor" aria-label="Author" aria-describedby="basic-addon2" name="author" required>
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon3"><i class="material-icons md-auto">category</i></span>
-            <input type="text" class="form-control" placeholder="Gatunek" aria-label="Genre" aria-describedby="basic-addon3" list="datalistOptions" required>
+            <span class="input-group-text" id="basic-addon3"><i class="material-icons md-auto">calendar_month</i></span>
+            <input type="date" class="form-control" placeholder="Data opublikowania" aria-label="publishedDate" aria-describedby="basic-addon3" name="publishedDate" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon4"><i class="material-icons md-auto">category</i></span>
+            <input type="text" class="form-control" placeholder="Gatunek" aria-label="Genre" aria-describedby="basic-addon4" name="genre" list="datalistOptions" required>
             <datalist id="datalistOptions">
                 <option value="Historyczna">
                 <option value="Powieść literacka">
@@ -32,7 +38,7 @@
     </div>
 </form>
 </div>
-
+</main>
 <%- include('./components/footer.ejs') %>
 <%- include('./components/scripts.ejs') %>
 <script src="/javascripts/search.js"></script>
