@@ -1,4 +1,5 @@
 var express = require('express');
+const Book = require('../models/book');
 var router = express.Router();
 
 /* GET search page. */
@@ -17,6 +18,20 @@ router.get('/data/', function(req, res, next) {
 });
 
 router.get('/add/', function(req, res) {
+    res.render('add-book', { title: 'Dodaj' });
+});
+
+router.post('/add/', function(req, res) {
+    const book = new Book( {
+        title: req.body.title,
+        author: req.body.author,
+        publishedDate: req.body.publishedDate,
+        genre: req.body.genre
+    });
+    book.save()
+        .then(result => console.log("Added to database"))
+        .catch(err => console.log(err));
+
     res.render('add-book', { title: 'Dodaj' });
 })
 
