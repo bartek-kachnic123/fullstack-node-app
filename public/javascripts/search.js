@@ -17,7 +17,7 @@ $('#search-input').keyup(function() {
 
 
 function getData(query) {
-    $.get('/search/data/',
+    $.get('/books/data/',
         {'q': query},
         function(data) {
             const data_array = []
