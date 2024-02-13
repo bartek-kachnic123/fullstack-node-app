@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('node-webapp:server');
 var http = require('http');
+const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
@@ -22,12 +23,21 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Connect to database.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+mongoose.connect(process.env.MONGODB_URI)
+    .then(result => {
+      /**
+       * Listen on provided port, on all network interfaces.
+       */
+
+      server.listen(port);
+      server.on('error', onError);
+      server.on('listening', onListening);
+
+    })
+    .catch(err => console.log(err))
 
 /**
  * Normalize a port into a number, string, or false.
