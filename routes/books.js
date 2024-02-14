@@ -7,14 +7,17 @@ router.get('/search/', function(req, res, next) {
     res.render('search', { title: 'Wyszukiwarka' });
 });
 
-router.get('/data/', function(req, res, next) {
-    let arr = ['title1', 'title2', 'title3'];
-    let filtered_arr = [];
-    console.log(req.query.q);
-    if (req.query.q.length !== 0) {
-        filtered_arr = arr.filter(s => s.includes(req.query.q));
+router.get('/data/', async function (req, res, next) {
+    if (req.query.length === 0) {
+        res.json({data: []});
     }
-    res.json({data: filtered_arr});
+    const regex = `^.*${req.query.q}.*$`
+    await Book.find({title: { $regex: req.query.q, $options: "i" }})
+        .then(result => {
+            res.json({data: result});
+        })
+        .catch(err => console.log(err));
+
 });
 
 router.get('/add/', function(req, res) {

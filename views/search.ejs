@@ -5,24 +5,19 @@
 </head>
 <body>
 <%- include('./components/nav.ejs') %>
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <form class="col s12" method="get">
-                <div class="row">
-                    <div class="input-field col s12 center-on-small-only">
-                        <i class="material-icons prefix">search</i>
-                        <input id="search-input" type="text" class="validate">
-                        <label for="search-input">Wyszukiwanie</label>
-                    </div>
-                </div>
+<main>
+<div class="container-md my-3 pt-3">
+    <div class="col">
+            <form method="get" class="row">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="material-icons md-auto">search</i></span>
+                <input id="search-input" type="text" class="form-control form-control-lg" placeholder="Wyszukiwanie..." aria-label="search" aria-describedby="basic-addon1">
+            </div>
             </form>
-        </div>
-        <div class="row">
-            <div id="search-listing" class="center"></div>
-        </div>
+        <div class="d-flex justify-content-center flex-wrap my-3 gap-3" id="search-listing"></div>
     </div>
 </div>
+</main>
 
 
 <%- include('./components/footer.ejs') %>

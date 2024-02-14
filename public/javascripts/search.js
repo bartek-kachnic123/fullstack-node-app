@@ -22,7 +22,7 @@ function getData(query) {
         function(data) {
             const data_array = []
             data['data'].forEach(elem => {
-                data_array.push("<h3>" + elem + "</h3>");
+                data_array.push("<div>" + elem.title + "</div>");
             });
             if (query.length > 0 && data_array.length === 0) {
                 data_array.push("<h3>Nie znaleziono książek</h3>");
