@@ -74,12 +74,15 @@ router.post('/add/', function(req, res) {
         colorHex: getRandomColor()
     });
 
-    if (Genre.exists({_id: req.body.genre}) === null) {
-        console.log(genre);
-        genre.save()
-            .then(result => console.log("Added genre to database"))
-            .catch(err => console.log(err));
-    }
+    Genre.findById(req.query.q).exec()
+        .then(result => {
+            if (!result) {
+                genre.save()
+                    .then(result => console.log("Added genre to database"))
+                    .catch(err => console.log(err));
+            }
+        })
+        .catch(err => console.log(err));
 
     const book = new Book( {
         title: req.body.title,
