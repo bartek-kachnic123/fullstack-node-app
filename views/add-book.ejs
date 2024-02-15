@@ -8,6 +8,8 @@
 <%- include('./components/nav.ejs') %>
 <main>
 <div class="container-sm py-5">
+    <div class="col py-2 px-2 border border-dark-subtle bg-platinium">
+    <div class="row mb-4"><h1>Dodaj książkę</h1></div>
 <form method="post" action="/books/add" class="row">
     <div class="col col-lg-6">
         <div class="input-group mb-3">
@@ -37,6 +39,7 @@
         <button class="btn-custom-green" type="submit">Dodaj nową książkę</button>
     </div>
 </form>
+</div>
 </div>
 </main>
 <%- include('./components/footer.ejs') %>
