@@ -9,15 +9,58 @@ router.get('/search/', function(req, res, next) {
 });
 
 router.get('/data/', async function (req, res, next) {
-    if (req.query.length === 0) {
+    if (/^\s*$/.test(req.query.q)) {
         res.json({data: []});
     }
-    const regex = `^.*${req.query.q}.*$`
-    await Book.find({title: { $regex: req.query.q, $options: "i" }})
-        .then(result => {
-            res.json({data: result});
-        })
-        .catch(err => console.log(err));
+    else {
+
+
+        Book.aggregate([{
+            $match: {
+                $expr: {
+                    $or: [
+                        {
+                            $regexMatch: {
+                                input: "$title",
+                                regex: new RegExp(req.query.q),
+                                options: "i"
+                            }
+                        },
+                        {
+                            $regexMatch: {
+                                input: "$genre",
+                                regex: new RegExp(req.query.q),
+                                options: "i"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+            {
+
+                $lookup: {
+                    from: 'genres',
+                    localField: 'genre',
+                    foreignField: '_id',
+                    as: 'genre_details'
+                }
+            },
+            {
+                $unwind: '$genre_details'
+            }
+
+        ])
+            .then(result => {
+                res.json({data: result});
+            }).catch(err => console.log(err));
+    }
+
+    // await Book.find({title: { $regex: req.query.q, $options: "i" }})
+    //     .then(result => {
+    //         res.json({data: result});
+    //     })
+    //     .catch(err => console.log(err));
 
 });
 
