@@ -20,6 +20,10 @@
     font-weight: bold;
 }
 
+#brand-logo-img {
+    max-height: 100px;
+}
+
 
 
 
@@ -30,6 +34,9 @@
 @media only screen and (max-width: 768px) {
     #brand-logo {
         font-size: 3rem;
+    }
+    #brand-logo-img {
+        max-height: 150px;
     }
     nav .nav-link {
         justify-content: center;
