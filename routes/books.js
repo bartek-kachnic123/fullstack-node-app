@@ -69,20 +69,7 @@ router.get('/add/', function(req, res) {
 });
 
 router.post('/add/', function(req, res) {
-    const genre = new Genre( {
-        _id: req.body.genre,
-        colorHex: getRandomColor()
-    });
-
-    Genre.findById(req.query.q).exec()
-        .then(result => {
-            if (!result) {
-                genre.save()
-                    .then(result => console.log("Added genre to database"))
-                    .catch(err => console.log(err));
-            }
-        })
-        .catch(err => console.log(err));
+    createUniqueGenre(req.body.genre);
 
     const book = new Book( {
         title: req.body.title,
@@ -109,5 +96,21 @@ const getRandomColor = () => {
     };
     const shuffled_arr = shuffle([randomNumber(10), randomNumber(11), randomNumber(12)])
     return`#${shuffled_arr[0]}${shuffled_arr[1]}${shuffled_arr[2]}`;
+}
+const createUniqueGenre = (name) => {
+    Genre.findById(name).exec()
+        .then(result => {
+            if (!result) {
+                const genre = new Genre( {
+                    _id: name,
+                    colorHex: getRandomColor()
+                });
+                genre.save()
+                    .then(result => console.log("Added genre to database"))
+                    .catch(err => console.log(err));
+            }
+        })
+        .catch(err => console.log(err));
+
 }
 module.exports = router;
