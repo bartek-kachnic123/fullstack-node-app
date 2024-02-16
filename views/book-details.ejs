@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('./components/head.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/book-details.css">
+
+</head>
+<body>
+<%- include('./components/nav.ejs') %>
+<main>
+    <div class="container-lg my-5">
+        <div class="col  bg-platinium border border-info rounded-end">
+                <div class="row">
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <img src="/images/open-book.svg" class="img-fluid mx-3" alt="open book">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row mb-4 mx-2"><h1>Zaktualizuj</h1></div>
+                        <form class="row">
+                            <div class="col col-lg-6 mx-2">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><i class="material-icons md-auto">title</i></span>
+                                    <input type="text" class="form-control" placeholder="Tytuł" aria-label="Title" aria-describedby="basic-addon1" name="title" value="<%= book.title %>" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon2"><i class="material-icons md-auto">person</i></span>
+                                    <input type="text" class="form-control" placeholder="Autor" aria-label="Author" aria-describedby="basic-addon2" name="author" value="<%= book.author %>" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon3"><i class="material-icons md-auto">calendar_month</i></span>
+                                    <input type="date" class="form-control" placeholder="Data opublikowania" aria-label="publishedDate" aria-describedby="basic-addon3" name="publishedDate" value="<%= book.publishedDate.toISOString().substring(0, 10) %>" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon4"><i class="material-icons md-auto">category</i></span>
+                                    <input type="text" class="form-control" placeholder="Gatunek" aria-label="Genre" aria-describedby="basic-addon4" name="genre" list="datalistOptions" value="<%= book.genre %>" required>
+                                    <datalist id="datalistOptions">
+                                                        <option value="Historyczna">
+                                                        <option value="Powieść literacka">
+                                                        <option value="Fantastyka">
+                                                        <option value="Kryminał/thriller">
+                                    </datalist>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="row">
+                        <div class="col-md-5 font-size-20">
+                            <button class="btn-custom-green my-1 mx-1">Zaktualizuj dane książki</button>
+                            <button class="btn-danger btn btn-sm my-1 mx-1" id="btn-delete"><i class="material-icons md-auto my-auto mx-auto">delete</i></button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+
+
+<%- include('./components/footer.ejs') %>
+<%- include('./components/scripts.ejs') %>
+</body>
+</html>

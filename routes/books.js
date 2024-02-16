@@ -1,4 +1,5 @@
 var express = require('express');
+const ObjectId = require('mongoose').Types.ObjectId
 const Book = require('../models/book');
 const Genre = require('../models/genre');
 var router = express.Router();
@@ -84,6 +85,20 @@ router.post('/add/', function(req, res) {
     res.render('add-book', { title: 'Dodaj' });
 })
 
+router.get('/b/:id', async function (req, res, next) {
+    if (ObjectId.isValid(req.params.id)) {
+        try {
+            const book = await Book.findById(req.params.id);
+            if (book) {
+                return res.render('book-details', {title: book.title, book: book});
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    next()
+})
 
 const getRandomColor = () => {
     const randomNumber =  (x) => (Math.floor(Math.random() * x) * 20).toString(16).padStart(2, '0');
