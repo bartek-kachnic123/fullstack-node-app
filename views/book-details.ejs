@@ -45,15 +45,36 @@
                         </form>
                         <div class="row">
                         <div class="col-sm font-size-20">
-                            <button class="btn-custom-green my-1 mx-1" onclick="updateData()">Zaktualizuj dane książki</button>
-                            <button class="btn-danger btn btn-sm my-1 mx-1" id="btn-delete"><i class="material-icons md-auto my-auto mx-auto">delete</i></button>
+                            <button type="button" class="btn-custom-green my-2 mx-2" onclick="updateData()">Zaktualizuj dane książki</button>
+                            <button type="button" class="btn btn-danger my-2 mx-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <i class="material-icons md-auto my-auto mx-auto">delete</i>
+                            </button>
                         </div>
                         </div>
                     </div>
                     </div>
                 </div>
             </div>
+
+
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Czy na pewno chcesz usunąć książkę?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Po usunięciu zostaniesz przekierowany do strony wyszukiwania.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                    <button type="button" class="btn btn-danger" id="btn-delete" onclick="deleteBook()">Potwierdź</button>
+                </div>
+            </div>
         </div>
+    </div>
 </main>
 
 

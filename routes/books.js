@@ -116,6 +116,19 @@ router.put('/b/:id', async function (req, res, next) {
     next();
 })
 
+router.delete('/b/:id', async function (req, res, next) {
+    if (ObjectId.isValid(req.params.id)) {
+        try {
+            await Book.findByIdAndDelete(req.params.id);
+            return res.json({redirect: '/books/search/'});
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+    next();
+})
+
 const getRandomColor = () => {
     const randomNumber =  (x) => (Math.floor(Math.random() * x) * 20).toString(16).padStart(2, '0');
     const shuffle = (array) => {

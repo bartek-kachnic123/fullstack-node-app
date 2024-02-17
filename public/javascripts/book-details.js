@@ -23,3 +23,16 @@ function updateData() {
         }
     });
 }
+
+
+function deleteBook() {
+    const url = document.URL;
+
+    $.ajax({
+        url: url,
+        type: 'DELETE',
+        success: function(data) {
+            window.location.href = data.redirect;
+        }
+    });
+}
