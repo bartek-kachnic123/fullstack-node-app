@@ -3,3 +3,11 @@
     left: 40px;
 
 }
+
+
+.position-abs-edit-btn {
+    position: absolute;
+    right: 20px;
+    bottom:100px;
+
+}

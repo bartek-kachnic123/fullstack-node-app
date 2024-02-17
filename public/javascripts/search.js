@@ -52,9 +52,9 @@ function addCard(data_array, book) {
     data_array.push(`<h5 class="card-title text-end px-5">${book.title}</h5>`);
     data_array.push(`<h6 class="card-text text-end px-1">${book.genre}</h6>`);
     data_array.push(`<p class="card-text text-end px-1"><small>${formatDate(book.publishedDate)}</small></p>`);
-    data_array.push(`<h6 class="card-text  text-uppercase position-rel-author">${book.author}</h6>
-                </div>
-            </div>`);
+    data_array.push(`<h6 class="card-text  text-uppercase position-rel-author">${book.author}</h6>`);
+    data_array.push(`<a href="/books/b/${book._id}" class="position-abs-edit-btn"><button type="button" class="btn btn-dark">Edytuj</button></a>   </div> </div>`)
+
 
 }
 
