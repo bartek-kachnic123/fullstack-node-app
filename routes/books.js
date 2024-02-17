@@ -100,6 +100,22 @@ router.get('/b/:id', async function (req, res, next) {
     next()
 })
 
+router.put('/b/:id', async function (req, res, next) {
+    if (ObjectId.isValid(req.params.id)) {
+
+        await Book.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            .then(result => {
+                if (result) {
+                    createUniqueGenre(result.genre);
+                }
+            })
+            .catch((err) => console.log(err));
+
+        return res.status(200).json({message: "Zaktualizowano"})
+    }
+    next();
+})
+
 const getRandomColor = () => {
     const randomNumber =  (x) => (Math.floor(Math.random() * x) * 20).toString(16).padStart(2, '0');
     const shuffle = (array) => {
