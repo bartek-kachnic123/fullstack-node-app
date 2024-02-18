@@ -1,4 +1,10 @@
 $(document).ready( function () {
+    const toast = document.getElementById('liveToast');
+    if (toast) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toast);
+        toastBootstrap.show();
+    }
+
     $.get('/books/genres/',
         function(data) {
             const data_array = [];

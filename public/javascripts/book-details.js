@@ -19,7 +19,9 @@ function updateData() {
         type: 'PUT',
         data: data,
         success: function(data) {
-            alert(JSON.stringify(data));
+            const toast = document.getElementById('liveToast');
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toast);
+            toastBootstrap.show();
         }
     });
 }
@@ -39,6 +41,7 @@ function deleteBook() {
 
 
 $(document).ready( function () {
+
     $.get('/books/genres/',
         function(data) {
             const data_array = [];

@@ -82,10 +82,10 @@ router.post('/add/', function(req, res) {
         .then(result => console.log("Added book to database"))
         .catch(err => console.log(err));
 
-    res.render('add-book', { title: 'Dodaj' });
+    res.render('add-book', { title: 'Dodaj', is_added: true });
 })
 
-router.get('/b/:id', async function (req, res, next) {
+router.get('/b/:id/', async function (req, res, next) {
     if (ObjectId.isValid(req.params.id)) {
         try {
             const book = await Book.findById(req.params.id);
@@ -100,7 +100,7 @@ router.get('/b/:id', async function (req, res, next) {
     next()
 })
 
-router.put('/b/:id', async function (req, res, next) {
+router.put('/b/:id/', async function (req, res, next) {
     if (ObjectId.isValid(req.params.id)) {
 
         await Book.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -116,7 +116,7 @@ router.put('/b/:id', async function (req, res, next) {
     next();
 })
 
-router.delete('/b/:id', async function (req, res, next) {
+router.delete('/b/:id/', async function (req, res, next) {
     if (ObjectId.isValid(req.params.id)) {
         try {
             await Book.findByIdAndDelete(req.params.id);

@@ -41,6 +41,24 @@
 </form>
 </div>
 </div>
+    <%if (locals.is_added) { %>
+
+        <div class="toast-container position-fixed top-50 end-0 p-3">
+            <div id="liveToast" class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
+                <div class="toast-header">
+                    <i class="material-icons md-auto mx-1">add</i>
+                    <strong class="me-auto">iBiblio</strong>
+                    <small>przed chwilą..</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Twoje zmiany zostały zapisane!
+                </div>
+            </div>
+        </div>
+
+    <% } %>
+
 </main>
 <%- include('./components/footer.ejs') %>
 <%- include('./components/scripts.ejs') %>
