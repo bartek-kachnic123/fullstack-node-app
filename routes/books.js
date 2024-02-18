@@ -129,6 +129,13 @@ router.delete('/b/:id', async function (req, res, next) {
     next();
 })
 
+router.get('/genres/', function(req, res) {
+    Genre.find()
+        .then(result => {
+            res.status(200).json({data: result});
+        })
+        .catch(err => console.log(err));
+})
 const getRandomColor = () => {
     const randomNumber =  (x) => (Math.floor(Math.random() * x) * 20).toString(16).padStart(2, '0');
     const shuffle = (array) => {

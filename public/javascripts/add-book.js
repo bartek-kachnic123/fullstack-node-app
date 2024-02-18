@@ -1,6 +1,8 @@
 $(document).ready( function () {
-    const names = ['Fantastyka', 'Historyczna', 'Dramat', 'Powieść Literacka'];
-    const array = []
-    names.forEach(elem => array.push(`<option value="${elem}">`) );
-    $("#datalistOptions").html(array.join(''));
+    $.get('/books/genres/',
+        function(data) {
+            const data_array = [];
+            data['data'].forEach(elem => data_array.push(`<option value="${elem['_id']}">`));
+            $("#datalistOptions").html(data_array.join(''));
+        })
 });
