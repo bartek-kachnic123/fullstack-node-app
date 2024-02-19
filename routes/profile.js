@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.get('/readed-books/', function(req, res, next) {
     Book.aggregate([{
         $match: {
-            is_readed: undefined
+            is_readed: true
         }
     },
         {

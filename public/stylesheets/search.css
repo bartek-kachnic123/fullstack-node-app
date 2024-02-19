@@ -11,3 +11,10 @@
     bottom:100px;
 
 }
+
+.position-abs-read-btn {
+    position: absolute;
+    left: 70px;
+    bottom:15px;
+
+}

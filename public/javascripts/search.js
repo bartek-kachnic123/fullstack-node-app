@@ -53,9 +53,15 @@ function addCard(data_array, book) {
     data_array.push(`<h6 class="card-text text-end px-1">${book.genre}</h6>`);
     data_array.push(`<p class="card-text text-end px-1"><small>${formatDate(book.publishedDate)}</small></p>`);
     data_array.push(`<h6 class="card-text  text-uppercase position-rel-author">${book.author}</h6>`);
-    data_array.push(`<a href="/books/b/${book._id}" class="position-abs-edit-btn"><button type="button" class="btn btn-dark">Edytuj</button></a>   </div> </div>`)
+    data_array.push(`<a href="/books/b/${book._id}" class="position-abs-edit-btn"><button type="button" class="btn btn-dark">Edytuj</button></a>`)
 
-
+    if (!book.is_readed) {
+        data_array.push(`<button type="button" id="${book._id}" onclick="markReaded(this.id)" class="btn btn-primary position-abs-read-btn">Dodaj do przeczytanych</button>`);
+    }
+    else {
+        console.log("OK");
+    }
+    data_array.push('</div></div>');
 }
 
 function formatDate(date) {
@@ -66,4 +72,21 @@ function formatDate(date) {
 
     return `${day}.${month}.${year}`;
 
+}
+
+function markReaded(id) {
+    const url = document.URL;
+    const data = {
+        _id: id,
+        is_readed: true
+    }
+    $.ajax({
+        url: url,
+        type: 'PUT',
+        data: data,
+        success: function(data) {
+            const read_btn = document.getElementById(data._id);
+            read_btn.style.display = 'none';
+        }
+    });
 }

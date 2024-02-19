@@ -136,6 +136,19 @@ router.get('/genres/', function(req, res) {
         })
         .catch(err => console.log(err));
 })
+
+router.put('/search/', async function(req, res, next) {
+    if (ObjectId.isValid(req.body._id)) {
+
+        await Book.findByIdAndUpdate(req.body._id, {is_readed: req.body.is_readed}, { new: true })
+            .then(result => {
+            })
+            .catch((err) => console.log(err));
+
+        return res.status(200).json({_id: req.body._id});
+    }
+    next();
+})
 const getRandomColor = () => {
     const randomNumber =  (x) => (Math.floor(Math.random() * x) * 20).toString(16).padStart(2, '0');
     const shuffle = (array) => {
