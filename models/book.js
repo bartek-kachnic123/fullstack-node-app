@@ -18,6 +18,10 @@ const bookSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    is_readed: {
+        type: Boolean,
+        default: false
+    },
     pageCount: Number,
 });
 

@@ -1,9 +1,47 @@
 var express = require('express');
+const Book = require("../models/book");
 var router = express.Router();
 
-/* GET home page. */
+/* GET profile page. */
 router.get('/', function(req, res, next) {
     res.render('profile', { title: 'Profil' });
 });
 
+router.get('/readed-books/', function(req, res, next) {
+    Book.aggregate([{
+        $match: {
+            is_readed: undefined
+        }
+    },
+        {
+
+            $lookup: {
+                from: 'genres',
+                localField: 'genre',
+                foreignField: '_id',
+                as: 'genre_details'
+            }
+        },
+        {
+            $unwind: '$genre_details'
+        }
+
+    ])
+        .then(result => {
+            const data = {};
+            result.forEach(elem => {
+                if (data[elem.genre]) {
+                    data[elem.genre].books.push([elem._id, elem.title]);
+                }
+                else {
+                    data[elem.genre] = {
+                        books: [[elem._id, elem.title]],
+                        colorHex: elem.genre_details.colorHex
+                    }
+                }
+            })
+            res.json({data: data});
+        }).catch(err => console.log(err));
+
+});
 module.exports = router;

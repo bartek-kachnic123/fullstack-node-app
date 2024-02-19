@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./components/head.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
 
 </head>
 <body>
@@ -13,20 +14,17 @@
                 <div class="col">
                     <div class="card mb-4" style="background-color: #424242">
                         <div class="card-body text-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                            <img src="/images/man-user-circle-icon.png" alt="avatar"
                                  class="rounded-circle img-fluid" style="width: 150px;">
-                            <h5 class="my-3 text-white">John Smith</h5>
-                            <p class="text-white mb-1">Full Stack Developer</p>
-                            <p class="text-white mb-4">Bay Area, San Francisco, CA</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <button type="button" class="btn btn-primary">Follow</button>
-                                <button type="button" class="btn btn-outline-primary ms-1">Message</button>
-                            </div>
+                            <h5 class="my-3 text-white">Twój profil</h5>
+                            <p class="text-white mb-1">Dotychczas przeczytano:</p>
+                            <p class="text-white mb-4"><strong id="totalBooksNumber">120</strong> książek</p>
+
                         </div>
                     </div>
 
             <div class="row">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" id="accordionPanel">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="btn-custom-green" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
@@ -74,5 +72,6 @@
 
 <%- include('./components/footer.ejs') %>
 <%- include('./components/scripts.ejs') %>
+<script src="/javascripts/profile.js"></script>
 </body>
 </html>
