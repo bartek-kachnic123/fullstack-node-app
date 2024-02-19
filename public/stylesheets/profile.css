@@ -2,3 +2,25 @@
     background-color: #26a69a;
     color: white;
 }
+
+.animate {
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-name: animate-fade;
+    animation-fill-mode: backwards;
+}
+
+.animate.flip {
+    animation-name: animate-flip;
+    transform-style: flat;
+}
+@keyframes animate-flip {
+    0% {
+        opacity: 0;
+        transform: rotateX(-120deg) scale(0.6,0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1,1);
+    }
+}
