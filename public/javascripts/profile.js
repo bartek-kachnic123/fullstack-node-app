@@ -2,6 +2,7 @@ $(document).ready( function () {
 
     $.get('/profile/readed-books/',
         function(data) {
+            setBooksNumber(data.readedBooksNumber);
             const data_array = [];
             const keys = Object.keys(data['data']);
             keys.sort();
@@ -24,3 +25,13 @@ $(document).ready( function () {
             $("#accordionPanel").html(data_array.join(''));
         })
 });
+
+
+function setBooksNumber(number) {
+    if (number == 1) {
+        $("#totalBooksNumber").html(`<strong>${number}</strong> książkę`);
+    }
+    else {
+        $("#totalBooksNumber").html(`<strong>${number}</strong> książki`);
+    }
+}

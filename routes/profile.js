@@ -28,6 +28,7 @@ router.get('/readed-books/', function(req, res, next) {
 
     ])
         .then(result => {
+            const readedBooksNumber = result.length;
             const data = {};
             result.forEach(elem => {
                 if (data[elem.genre]) {
@@ -40,7 +41,7 @@ router.get('/readed-books/', function(req, res, next) {
                     }
                 }
             })
-            res.json({data: data});
+            res.json({data: data, readedBooksNumber: readedBooksNumber});
         }).catch(err => console.log(err));
 
 });
