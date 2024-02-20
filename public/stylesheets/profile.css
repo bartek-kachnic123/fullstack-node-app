@@ -4,8 +4,8 @@
 }
 
 .animate {
-    animation-duration: 0.5s;
-    animation-delay: 0.5s;
+    animation-duration: 0.4s;
+    animation-delay: 0.4s;
     animation-name: animate-fade;
     animation-fill-mode: backwards;
 }

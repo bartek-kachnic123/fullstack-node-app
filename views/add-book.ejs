@@ -28,10 +28,7 @@
             <span class="input-group-text" id="basic-addon4"><i class="material-icons md-auto">category</i></span>
             <input type="text" class="form-control" placeholder="Gatunek" aria-label="Genre" aria-describedby="basic-addon4" name="genre" list="datalistOptions" required>
             <datalist id="datalistOptions">
-<!--                <option value="Historyczna">-->
-<!--                <option value="Powieść literacka">-->
-<!--                <option value="Fantastyka">-->
-<!--                <option value="Kryminał/thriller">-->
+
             </datalist>
         </div>
     </div>
@@ -43,7 +40,7 @@
 </div>
     <%if (locals.is_added) { %>
 
-        <div class="toast-container position-fixed top-50 end-0 p-3">
+        <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
             <div id="liveToast" class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
                 <div class="toast-header">
                     <i class="material-icons md-auto mx-1">add</i>
