@@ -22,7 +22,6 @@ function getData(query) {
         function(data) {
             const data_array = []
             data['data'].forEach(elem => {
-                // data_array.push("<div>" + elem.title + "</div>");
                 addCard(data_array, elem);
             });
             if (query.length > 0 && data_array.length === 0) {
@@ -47,9 +46,7 @@ function addCard(data_array, book) {
     if (!book.is_readed) {
         data_array.push(`<button type="button" id="${book._id}" onclick="markReaded(this.id)" class="btn btn-primary position-abs-read-btn">Dodaj do przeczytanych</button>`);
     }
-    else {
-        console.log("OK");
-    }
+
     data_array.push('</div></div>');
 }
 
